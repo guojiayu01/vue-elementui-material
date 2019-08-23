@@ -56,9 +56,9 @@ npm run dev
 
 
 
-[点击这里查看效果]([http://www.guojiayu.vip:8080/materils_v2.0/#/](http://www.guojiayu.vip:8080/materils_v2.0/#/))
+[点击这里查看效果](http://www.guojiayu.vip:8080/materils_v2.0/#/)
 
-或者复制：[http://www.guojiayu.vip:8080/materils_v2.0/#/](http://www.guojiayu.vip:8080/materils_v2.0/#/)
+或者复制：http://www.guojiayu.vip:8080/materils_v2.0/#/
 
 默认账号 0001 
 
