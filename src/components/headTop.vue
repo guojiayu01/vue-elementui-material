@@ -5,27 +5,23 @@
         <div class="left">
           <img src="../assets/logo2.png" alt />
         </div>
-        
 
-          <div class="btn-fullscreen" @click="handleFullScreen">
-            <el-tooltip effect="dark" :content="fullscreen ? `取消全屏`:`全屏显示`" placement="bottom">
-              <i class="el-icon-rank"></i>
-            </el-tooltip>
+        <div class="btn-fullscreen" @click="handleFullScreen">
+          <el-tooltip effect="dark" :content="fullscreen ? `取消全屏`:`全屏显示`" placement="bottom">
+            <i class="el-icon-rank"></i>
+          </el-tooltip>
+        </div>
+
+        <!-- 消息 -->
+
+        <div class="messages">
+          <div class="one">
+            <el-badge :value="3" class="item">
+              <i class="el-icon-message" @click="drawer = true"></i>
+            </el-badge>
           </div>
+        </div>
 
-          <!-- 消息 -->
-
-          <div class="messages">
-            <div class="one">
-               <el-badge :value="3" class="item">
-                <i class="el-icon-message" @click="drawer = true"></i>
-              </el-badge>
-            </div>
-             
-           
-          </div>
-
-        
         <!-- 全屏 -->
 
         <el-drawer
@@ -53,9 +49,7 @@
 
           <el-card style="position: relative;" class="elcard10">
             <div class="card">
-              <div class="something">
-                
-              </div>
+              <div class="something"></div>
             </div>
           </el-card>
         </el-drawer>
@@ -68,7 +62,6 @@
               {{this.username}}
             </span>
             <el-dropdown-menu slot="dropdown">
-
               <el-dropdown-item icon="el-icon-user" split-button="true">
                 <span @click="tozhuce">登出</span>
               </el-dropdown-item>
@@ -104,7 +97,10 @@ export default {
       this.$router.push({ path: "/" });
     },
     tozhuce() {
-      this.$router.push({ path: "/" });
+      let flag = false;
+      this.$store.commit("login", flag);
+      this.$router.push("/");
+      console.log("退出登录");
     },
     handleFullScreen() {
       let element = document.documentElement;
@@ -133,9 +129,7 @@ export default {
       this.fullscreen = !this.fullscreen;
     },
     handleClose(done) {
-    
-          done();
-       
+      done();
     }
   }
 };
@@ -194,6 +188,6 @@ body {
   margin-top: 20px;
 }
 .elcard10 {
-    margin: 10px 10px;
+  margin: 10px 10px;
 }
 </style>

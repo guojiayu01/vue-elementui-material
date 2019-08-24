@@ -244,7 +244,7 @@ export default {
       let _this = this;
       this.$axios
         .post("/user", {
-          jobNum:_this.addUser.jobNum+_this.addUser.length+1,
+          jobNum:_this.addUser.jobNum+_this.user.length+1,
           userName: _this.addUser.userName,
           passWord: _this.addUser.passWord,
           userTel: _this.addUser.userTel,

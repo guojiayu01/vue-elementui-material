@@ -91,6 +91,8 @@ export default {
   inject: ["reload"],
   methods: {
     denglu() {
+      let flag = true;
+      this.$store.commit('login',flag);
       let _this = this;
       this.$axios
         .post("/login", {
@@ -101,9 +103,8 @@ export default {
         .then(res => {
           if (res.data.code === 200) {
             this.$router.push({ path: "/home/first" });
-            this.$router.go(0);
-            this.$message("登陆成功");
             this.$store.commit("handleUserName", res.data.data.userName);
+            this.$message("登陆成功");
           }
         })
         .catch(err => {
