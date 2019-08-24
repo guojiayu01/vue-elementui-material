@@ -1,4 +1,4 @@
-### About
+### VUE管理系统
 
 ---
 
@@ -55,10 +55,9 @@ npm run dev
 ---
 
 
+[点击这里查看效果](http://www.guojiayu.vip:8080/materils_v2.0/#/)
 
-[点击这里查看效果]([http://www.guojiayu.vip:8080/materils_v2.0/#/](http://www.guojiayu.vip:8080/materils_v2.0/#/))
 
-或者复制：[http://www.guojiayu.vip:8080/materils_v2.0/#/](http://www.guojiayu.vip:8080/materils_v2.0/#/)
 
 默认账号 0001 
 
@@ -88,12 +87,17 @@ npm run dev
 ### 部分页面截图
 
 ---
+![image](https://github.com/guojiayu01/Material/blob/master/images/1.png) 
 
-  ![屏幕快照 2019-08-23 下午5.04.52](some/屏幕快照 2019-08-23 下午5.04.52.png)
+![image](https://github.com/guojiayu01/Material/blob/master/images/2.png) 
+
+![image](https://github.com/guojiayu01/Material/blob/master/images/3.png) 
+
+![image](https://github.com/guojiayu01/Material/blob/master/images/4.png) 
 
 
 
-  ![屏幕快照 2019-08-23 下午5.03.36](some/屏幕快照 2019-08-23 下午5.03.36.png) ![屏幕快照 2019-08-23 下午5.02.47](some/屏幕快照 2019-08-23 下午5.02.47.png) ![屏幕快照 2019-08-23 下午5.02.33](some/屏幕快照 2019-08-23 下午5.02.33.png)
+
 
 
 
