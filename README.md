@@ -48,8 +48,17 @@ npm install
 npm run dev
 ~~~
 
-
-
+### 注意
+ 在项目根目录新建postcss.config.js文件，并对postcss进行配置 有的话就不用了
+ 添加下面代码  就可以正常运行了
+ 
+ ~~~javascript
+ module.exports = { 
+  plugins: { 
+    'autoprefixer': {browsers: 'last 5 version'} 
+  } 
+}
+~~~
 
 
 ### 效果演示
