@@ -4,6 +4,7 @@
       <el-header class="my-header">
         <div class="left">
           <img src="../assets/logo2.png" alt />
+          <!-- <el-button></el-button> -->
         </div>
 
         <div class="btn-fullscreen" @click="handleFullScreen">

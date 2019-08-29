@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="first">
     <div class="message">
       <el-row :gutter="20">
         <el-col :span="6">
@@ -86,9 +86,7 @@
 
     <div class="welcome">
       <el-card class="elcard20">
-        <span class="span1">welcome</span>
-        <span class="span2">to</span>
-        <span class="span3">material</span>
+        <div class="text2">WELCOME</div>
       </el-card>
     </div>
   </div>
@@ -100,8 +98,7 @@ export default {
     return {
       value: new Date(),
       materialL: "",
-      userL: "",
-      
+      userL: ""
     };
   },
   components: {},
@@ -134,14 +131,8 @@ export default {
           console.log(err.response);
         }
       });
-
-     
-
-   
   },
-  computed:{
-   
-  },
+  computed: {},
   methods: {
     format(percentage) {
       return percentage === 100 ? "满" : `${percentage}%`;
@@ -325,6 +316,7 @@ export default {
 </script>
 
 <style>
+
 .el-carousel__item h3 {
   color: #475669;
   font-size: 14px;
@@ -373,9 +365,13 @@ export default {
 }
 .elcard20 {
   height: 150px;
-  line-height: 150px;
+  /* line-height: 150px; */
   text-align: center;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
+   /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .elcard20 span {
   font-size: 100px;
@@ -395,5 +391,16 @@ export default {
 }
 .span3 {
   color: #409eff;
+}
+
+.elcard20 .text2 {
+  background: url(https://media.giphy.com/media/3o6Ztb45EYezY9x9gQ/giphy.gif);
+  background-size: contain;
+  background-position: top left;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 9rem;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 </style>

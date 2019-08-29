@@ -232,7 +232,29 @@ export default {
       this.$message("已取消操作");
     },
     addPlans() {
-      let _this = this;
+      // let _this = this;
+      // this.$axios
+      //   .post("/needplans", {
+      //     // marterialNum: _this.addPlan.marterialNum,
+      //     materialName: _this.addPlan.materialName,
+      //     num: _this.addPlan.num,
+      //     price: _this.addPlan.price,
+      //     remark: _this.addPlan.remark
+      //   })
+      //   .then(res => {
+      //     if (res.data.code === 200) {
+      //       this.$message("提交成功");
+      //       this.flag = !this.flag;
+      //       this.reload();
+      //     }
+      //   })
+      //   .catch(function(err) {
+      //     if (err.response) {
+      //       console.log(err.response);
+      //     }
+      //   });
+      if(this.addPlan.materialName){
+        let _this = this;
       this.$axios
         .post("/needplans", {
           // marterialNum: _this.addPlan.marterialNum,
@@ -253,6 +275,9 @@ export default {
             console.log(err.response);
           }
         });
+      }else{
+        this.$message('请添全数据')
+      }
     },
     showC() {
       if (this.changePlan.id) {

@@ -67,7 +67,7 @@
         <i class="el-icon-close" @click="clossAdd()"></i>
       </div>
       <div class="add">
-        <el-form ref="form" :model="addUser" label-width="80px">
+        <el-form ref="form" :model="addUser" label-width="80px" :rules="rules">
           <el-form-item label="姓名">
             <el-input v-model="addUser.userName"></el-input>
           </el-form-item>
@@ -209,13 +209,21 @@ export default {
       ],
       rules: {
         account: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
+          { required: true, message: "请输入账号", trigger: "blur" },
           { max: 10, message: "不能大于10个字符", trigger: "blur" }
         ],
         password: [
           { required: true, message: "请输入密码", trigger: "blur" },
           { max: 10, message: "不能大于10个字符", trigger: "blur" }
-        ]
+        ],
+        jobnum: [
+          { required: true, message: "请输入电话", trigger: "blur" },
+          { max: 10, message: "不能大于10个字符", trigger: "blur" }
+        ],
+        name: [
+          { required: false, message: "请输入姓名", trigger: "blur" },
+          { max: 10, message: "不能大于10个字符", trigger: "blur" }
+        ],
       }
     };
   },
@@ -241,7 +249,8 @@ export default {
       this.flag = !this.flag;
     },
     addPeople() {
-      let _this = this;
+      if(this.addUser.userName){
+         let _this = this;
       this.$axios
         .post("/user", {
           jobNum:_this.addUser.jobNum+_this.user.length+1,
@@ -267,6 +276,9 @@ export default {
             this.$message("后台连接失败");
           }
         });
+      }else{
+        this.$message('请添全信息')
+      }
     },
     changeUser() {
       let _this = this;
@@ -296,8 +308,10 @@ export default {
         });
     },
     deleteInfo() {
+      if(this.deleteList.jobNum=='0001'){
+        this.$message('没有权限')
+      }else{
       let _this = this;
-      // _this.jobNum = _this.deleteList.jobNum
       console.log(_this.deleteList.jobNum);
       this.$axios
         .delete("/user", {
@@ -318,6 +332,7 @@ export default {
             this.$message("后台连接失败");
           }
         });
+      }
     },
 
     showDelete() {

@@ -21,9 +21,9 @@
 
         <el-table-column label="物资名称" prop="materialName"></el-table-column>
 
-        <el-table-column label="物资申请时间" prop="materialPostTime"></el-table-column>
+        <!-- <el-table-column label="物资申请时间" prop="materialPostTime"></el-table-column>
 
-        <el-table-column label="物资编码通过时间" prop="materialPassTime"></el-table-column>
+        <el-table-column label="物资编码通过时间" prop="materialPassTime"></el-table-column> -->
 
         <el-table-column label="价格" prop="price"></el-table-column>
 
@@ -227,7 +227,29 @@ export default {
       this.flag2 = !this.flag2;
     },
     addMa() {
-      let _this = this;
+      // let _this = this;
+      // this.$axios
+      //   .post("/materials", {
+      //     materialName: _this.addM.materialName,
+      //     price: _this.addM.price,
+      //     materialTypeName: _this.addM.materialTypeName,
+      //     poster: _this.addM.poster,
+      //     remark: _this.addM.remark
+      //   })
+      //   .then(res => {
+      //     if (res.data.code === 200) {
+      //       this.$message("添加成功");
+      //       this.flag2 = !this.flag2;
+      //       this.reload();
+      //     }
+      //   })
+      //   .catch(function(err) {
+      //     if (err.response) {
+      //       console.log(err.response);
+      //     }
+      //   });
+      if(this.addM.materialName){
+        let _this = this;
       this.$axios
         .post("/materials", {
           materialName: _this.addM.materialName,
@@ -248,6 +270,9 @@ export default {
             console.log(err.response);
           }
         });
+      }else{
+        this.$message('请添全数据')
+      }
     },
     postM() {
       if (this.changematerial.materialState) {
