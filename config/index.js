@@ -12,8 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://47.95.196.248:8080/materils_v2.0',
-        // target: 'http://192.168.0.113:8080/materils_v2.0',
+       
+        target: 'http://127.0.0.1:8080/materils_v2.0',
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
             '^/api': '/api',//重写,
